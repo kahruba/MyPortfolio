@@ -1,0 +1,470 @@
+
+/* =====================================================
+   ACHIEVEMENTS PAGE
+   Theme: Dark / Purple / Pink
+   No animations
+===================================================== */
+
+/* ---------- ROOT VARIABLES ---------- */
+
+:root {
+    --bg-color: #0b0b12;
+    --bg-secondary: #11111c;
+    --card-color: #171725;
+    --primary-color: #a855f7;
+    --secondary-color: #d8b4fe;
+    --text-color: #f5f3ff;
+    --text-muted: #b5b2c9;
+    --border-color: rgba(168, 85, 247, 0.22);
+    --gradient: linear-gradient(135deg, #a855f7, #ec4899);
+    --transition: all 0.3s ease;
+}
+
+
+/* ---------- GENERAL ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   2. NAVBAR / HEADER
+===================================================== */
+
+.custom-navbar {
+    background: rgba(11, 11, 18, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 0;
+    transition: none;
+}
+
+.logo,
+.footer-logo {
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo::after {
+    content: ".";
+    color: var(--primary-color);
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.custom-navbar .nav-link {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 10px !important;
+    transition:none;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    color: var(--secondary-color);
+}
+
+.custom-navbar .navbar-toggler {
+    border: 1px solid var(--border-color);
+    padding: 7px 10px;
+    box-shadow: none;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18);
+}
+
+.custom-navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+
+/* ---------- ACHIEVEMENTS SECTION ---------- */
+
+.achievements-section {
+    min-height: 70vh;
+    padding: 75px 0 90px;
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(168, 85, 247, 0.08),
+            transparent 32%
+        ),
+        var(--bg-color);
+}
+
+
+/* ---------- SECTION HEADING ---------- */
+
+.achievements-heading {
+    max-width: 680px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.achievements-heading h1 {
+    margin: 0 0 15px;
+    color: var(--text-color);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.achievements-heading h1 span {
+    color: var(--primary-color);
+}
+
+.achievements-heading p {
+    max-width: 580px;
+    margin: 0 auto;
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+
+/* ---------- ACHIEVEMENT CARD ---------- */
+
+.achievement-card {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 40px;
+
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 35px;
+
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+}
+
+
+/* ---------- ACHIEVEMENT CONTENT ---------- */
+
+.achievement-content {
+    min-width: 0;
+}
+
+.achievement-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 22px;
+    padding: 8px 13px;
+
+    color: var(--gold-color);
+    background: rgba(228, 182, 79, 0.08);
+    border: 1px solid rgba(228, 182, 79, 0.25);
+    border-radius: 30px;
+
+    font-size: 0.78rem;
+    font-weight: 500;
+}
+
+.achievement-badge i {
+    font-size: 1rem;
+}
+
+.achievement-content h2 {
+    margin: 0 0 12px;
+    color: var(--text-color);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.achievement-content h3 {
+    margin: 0 0 18px;
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.achievement-content > p {
+    margin: 0 0 22px;
+    color: var(--muted-color);
+    font-size: 0.9rem;
+    line-height: 1.9;
+}
+
+.achievement-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.achievement-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-color);
+    font-size: 0.8rem;
+}
+
+.achievement-meta i {
+    color: var(--gold-color);
+    font-size: 1.05rem;
+}
+
+
+/* ---------- CERTIFICATE ---------- */
+
+.certificate-wrapper {
+    min-width: 0;
+    text-align: center;
+}
+
+.certificate-wrapper > a {
+    display: block;
+    padding: 10px;
+
+    background: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    max-height: 620px;
+    margin: 0 auto;
+
+    object-fit: contain;
+    object-position: center;
+    border-radius: 5px;
+}
+
+.certificate-caption {
+    margin: 14px 0 0;
+    color: var(--muted-color);
+    font-size: 0.78rem;
+}
+
+.certificate-caption i {
+    margin-right: 5px;
+    color: var(--primary-color);
+}
+
+
+/* =====================================================
+   10. FOOTER
+===================================================== */
+
+.footer {
+    padding: 55px 0 20px;
+    background: #08080d;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-content > p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    background: var(--card-color);
+    font-size: 1.1rem;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 22px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+    color: #9692a9;
+    font-size: 0.8rem;
+}
+
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 991.98px) {
+
+    .custom-navbar .navbar-nav {
+        align-items: stretch !important;
+        gap: 3px;
+        padding-top: 15px;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 10px 5px;
+    }
+
+    .achievement-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .achievements-section {
+        padding: 60px 0 70px;
+    }
+
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 767.98px) {
+
+    .achievements-section {
+        padding: 45px 0 55px;
+    }
+
+    .achievements-heading {
+        margin-bottom: 30px;
+    }
+
+    .achievements-heading p {
+        font-size: 0.88rem;
+    }
+
+    .achievement-card {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .achievement-content h2 {
+        font-size: 1.55rem;
+    }
+
+    .achievement-content h3 {
+        font-size: 0.95rem;
+    }
+
+    .achievement-content > p {
+        font-size: 0.86rem;
+    }
+
+    .certificate-wrapper {
+        width: 100%;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    .certificate-image {
+        max-height: none;
+    }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width: 400px) {
+
+    .achievements-heading h1 {
+        font-size: 1.8rem;
+    }
+
+    .achievement-card {
+        padding: 16px;
+    }
+
+    .achievement-badge {
+        font-size: 0.7rem;
+    }
+
+    .footer-content > p {
+        font-size: 0.78rem;
+    }
+
+}
+
+
+/* ---------- ACCESSIBILITY ---------- */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 4px;
+}

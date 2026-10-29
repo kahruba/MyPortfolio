@@ -1,0 +1,352 @@
+/* =====================================================
+   1. CONTACT SECTION
+===================================================== */
+
+.contact-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 100px;
+
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 35%,
+            rgba(126, 34, 206, 0.15),
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(236, 72, 153, 0.07),
+            transparent 45%
+        ),
+        var(--bg-color);
+}
+
+
+/* =====================================================
+   2. BACKGROUND EFFECT
+===================================================== */
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: 15%;
+    right: -120px;
+
+    border-radius: 50%;
+    background: rgba(168, 85, 247, 0.09);
+
+    filter: blur(70px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   3. SECTION HEADING
+===================================================== */
+
+.contact-section .section-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+}
+
+.contact-section .section-heading h2 {
+    color: var(--text-color);
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.contact-section .section-heading h2::after {
+    content: "";
+    display: block;
+
+    width: 65px;
+    height: 4px;
+
+    margin: 17px auto 0;
+    border-radius: 10px;
+
+    background: var(--gradient);
+}
+
+.contact-section .section-heading > p:last-child {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   4. CONTACT LINKS CONTAINER
+===================================================== */
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   5. CONTACT LINKS
+   Consistent with the website theme
+===================================================== */
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    width: 100%;
+    min-height: 88px;
+    padding: 20px 24px;
+
+    color: var(--text-color);
+    background: var(--card-color);
+
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.6;
+    text-decoration: none;
+
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
+    transition: var(--transition);
+}
+
+.contact-link:visited {
+    color: var(--text-color);
+}
+
+.contact-link:hover {
+    color: var(--secondary-color);
+    background: rgba(168, 85, 247, 0.09);
+
+    border-color: var(--primary-color);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2),
+        0 0 20px rgba(168, 85, 247, 0.06);
+}
+
+
+/* =====================================================
+   6. CONTACT ICONS
+===================================================== */
+
+.contact-link i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 13px;
+
+    color: var(--secondary-color);
+    background: rgba(168, 85, 247, 0.13);
+
+    border: 1px solid rgba(168, 85, 247, 0.12);
+
+    font-size: 1.35rem;
+
+    transition: var(--transition);
+}
+
+.contact-link:hover i {
+    color: #ffffff;
+    background: var(--gradient);
+    border-color: transparent;
+    transform: scale(1.05);
+}
+
+
+/* =====================================================
+   7. KEYBOARD ACCESSIBILITY
+===================================================== */
+
+.contact-link:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+
+    color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+
+/* =====================================================
+   8. CONTACT NAVBAR ACTIVE LINK
+===================================================== */
+
+.custom-navbar .navbar-nav .nav-link.active {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    color: var(--secondary-color);
+}
+
+
+/* =====================================================
+   9. CONTACT PAGE FOOTER
+===================================================== */
+
+.footer {
+    position: relative;
+    padding: 25px 0;
+
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.footer p span {
+    color: var(--secondary-color);
+}
+
+
+/* =====================================================
+   10. TABLETS
+===================================================== */
+
+@media (max-width: 991.98px) {
+    .contact-section {
+        padding: 135px 0 85px;
+    }
+
+    .contact-section .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .contact-links {
+        max-width: 600px;
+    }
+}
+
+
+/* =====================================================
+   11. MOBILE PHONES
+===================================================== */
+
+@media (max-width: 767.98px) {
+    .contact-section {
+        min-height: 100vh;
+        padding: 120px 0 65px;
+    }
+
+    .contact-section .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .contact-section .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .contact-section .section-heading > p:last-child {
+        font-size: 0.87rem;
+    }
+
+    .contact-links {
+        gap: 14px;
+    }
+
+    .contact-link {
+        gap: 14px;
+        min-height: 76px;
+        padding: 16px;
+        border-radius: 13px;
+        font-size: 0.85rem;
+    }
+
+    .contact-link i {
+        width: 43px;
+        height: 43px;
+        border-radius: 11px;
+        font-size: 1.2rem;
+    }
+
+    .footer {
+        padding: 20px 15px;
+    }
+
+    .footer p {
+        font-size: 0.78rem;
+    }
+}
+
+
+/* =====================================================
+   12. SMALL MOBILE PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+    .contact-section {
+        padding-top: 110px;
+        padding-bottom: 50px;
+    }
+
+    .contact-section .section-heading h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-link {
+        gap: 12px;
+        padding: 13px;
+        font-size: 0.78rem;
+    }
+
+    .contact-link i {
+        width: 39px;
+        height: 39px;
+        font-size: 1.1rem;
+    }
+}
+
+
+/* =====================================================
+   13. REDUCED MOTION ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-link,
+    .contact-link i {
+        transition: none;
+    }
+
+    .contact-link:hover,
+    .contact-link:hover i {
+        transform: none;
+    }
+}
+

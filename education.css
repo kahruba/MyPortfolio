@@ -1,0 +1,668 @@
+/* =====================================================
+   1. GLOBAL STYLES
+===================================================== */
+
+:root {
+    --bg-color: #0b0b12;
+    --bg-secondary: #11111c;
+    --card-color: #171725;
+    --primary-color: #a855f7;
+    --secondary-color: #d8b4fe;
+    --text-color: #f5f3ff;
+    --text-muted: #b5b2c9;
+    --border-color: rgba(168, 85, 247, 0.22);
+    --gradient: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   2. NAVBAR / HEADER
+===================================================== */
+
+.custom-navbar {
+    background: rgba(11, 11, 18, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 18px 0;
+}
+
+.logo,
+.footer-logo {
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff !important;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo::after {
+    content: ".";
+    color: var(--primary-color);
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.custom-navbar .nav-link {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 8px 10px !important;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus,
+.custom-navbar .nav-link.active {
+    color: var(--secondary-color);
+}
+
+.custom-navbar .navbar-toggler {
+    border: 1px solid var(--border-color);
+    padding: 7px 10px;
+    box-shadow: none;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18);
+}
+
+.custom-navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* =====================================================
+   3. COMMON BUTTONS
+===================================================== */
+
+.custom-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 23px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.btn-primary.custom-btn {
+    background: var(--gradient);
+    border: 1px solid transparent;
+    color: #ffffff;
+}
+
+.btn-primary.custom-btn:hover {
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.22);
+}
+
+.btn-outline-light.custom-btn {
+    border: 1px solid rgba(216, 180, 254, 0.55);
+    color: var(--text-color);
+    background: transparent;
+}
+
+.btn-outline-light.custom-btn:hover {
+    background: rgba(168, 85, 247, 0.12);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+
+/* =====================================================
+   4. EDUCATION HERO SECTION
+===================================================== */
+
+.education-hero {
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 90px;
+    background:
+        radial-gradient(
+            ellipse at 15% 45%,
+            rgba(126, 34, 206, 0.16),
+            transparent 48%
+        ),
+        var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.education-hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-label {
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.education-hero h1 {
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.education-hero h1::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 4px;
+    margin: 20px auto 0;
+    border-radius: 10px;
+    background: var(--gradient);
+}
+
+.hero-description {
+    max-width: 760px;
+    margin: 0 auto 28px;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   5. COMMON SECTION STYLES
+===================================================== */
+
+.section {
+    padding: 90px 0;
+    position: relative;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 50px;
+}
+
+.section-heading h2,
+.goals-card h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.section-heading h2::after {
+    content: "";
+    display: block;
+    width: 65px;
+    height: 4px;
+    margin: 17px auto 0;
+    border-radius: 10px;
+    background: var(--gradient);
+}
+
+.section-heading > p:last-child {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   6. ACADEMIC JOURNEY
+===================================================== */
+
+.academic-section {
+    background: var(--bg-secondary);
+}
+
+.info-card {
+    height: 100%;
+    padding: 32px 27px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow-wrap: anywhere;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    background: rgba(168, 85, 247, 0.13);
+    color: var(--secondary-color);
+    font-size: 1.6rem;
+}
+
+.education-level {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    line-height: 1.7;
+}
+
+.info-card h3 {
+    font-size: 1.12rem;
+    font-weight: 700;
+    line-height: 1.55;
+    margin-bottom: 14px;
+}
+
+.info-card h4 {
+    font-size: 0.91rem;
+    font-weight: 500;
+    color: var(--secondary-color);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.info-card h4 a {
+    color: inherit;
+}
+
+.info-card h4 a:hover {
+    color: #ffffff;
+}
+
+.info-card > p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.9;
+    margin-bottom: 24px;
+}
+
+.education-details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    font-size: 0.79rem;
+}
+
+.education-details span {
+    color: var(--text-muted);
+}
+
+.education-details strong {
+    color: var(--secondary-color);
+    text-align: right;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   7. LEARNING INTERESTS
+===================================================== */
+
+.interests-section {
+    background: var(--bg-color);
+}
+
+.interest-card {
+    height: 100%;
+    padding: 30px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow-wrap: anywhere;
+}
+
+.interest-card .card-icon {
+    margin-bottom: 20px;
+}
+
+.interest-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 13px;
+}
+
+.interest-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   8. FUTURE ACADEMIC GOALS
+===================================================== */
+
+.goals-section {
+    background: var(--bg-secondary);
+}
+
+.goals-card {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 45px;
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 22px;
+}
+
+.goals-card .card-icon {
+    margin-bottom: 25px;
+}
+
+.goals-card .section-label {
+    margin-bottom: 12px;
+}
+
+.goals-card h2 {
+    margin-bottom: 22px;
+}
+
+.goals-card > p:not(.section-label) {
+    max-width: 740px;
+    margin: 0 auto 28px;
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    line-height: 1.95;
+}
+
+
+/* =====================================================
+   9. FOOTER
+===================================================== */
+
+.footer {
+    padding: 55px 0 20px;
+    background: #08080d;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.footer-content > p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 24px;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 35px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    color: var(--secondary-color);
+    background: var(--card-color);
+    font-size: 1.1rem;
+}
+
+.footer-socials a:hover {
+    color: #ffffff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 22px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+    color: #9692a9;
+    font-size: 0.8rem;
+}
+
+
+/* =====================================================
+   10. KEYBOARD ACCESSIBILITY
+===================================================== */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 4px;
+}
+
+
+/* =====================================================
+   11. LARGE TABLETS
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+    .custom-navbar {
+        padding: 15px 0;
+    }
+
+    .custom-navbar .navbar-collapse {
+        margin-top: 15px;
+        padding: 12px 0;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .navbar-nav {
+        gap: 3px;
+    }
+
+    .custom-navbar .nav-link {
+        padding: 10px 5px !important;
+        font-size: 0.9rem;
+    }
+
+    .education-hero {
+        min-height: 55vh;
+        padding: 135px 0 75px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .info-card,
+    .interest-card {
+        padding: 26px 22px;
+    }
+
+    .goals-card {
+        padding: 40px 30px;
+    }
+}
+
+
+/* =====================================================
+   12. MOBILE PHONES
+===================================================== */
+
+@media (max-width: 767.98px) {
+
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .custom-navbar {
+        padding: 13px 0;
+    }
+
+    .logo {
+        font-size: 0.86rem;
+        letter-spacing: 0.4px;
+        max-width: calc(100% - 60px);
+        overflow-wrap: anywhere;
+    }
+
+    .education-hero {
+        min-height: auto;
+        padding: 120px 0 65px;
+    }
+
+    .education-hero h1 {
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
+        margin-bottom: 22px;
+    }
+
+    .section-label {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: 0.88rem;
+        line-height: 1.85;
+    }
+
+    .custom-btn {
+        padding: 11px 17px;
+        font-size: 0.84rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2,
+    .goals-card h2 {
+        font-size: 2rem;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 0.87rem;
+    }
+
+    .info-card,
+    .interest-card {
+        padding: 25px 22px;
+    }
+
+    .info-card h3,
+    .interest-card h3 {
+        font-size: 1.08rem;
+    }
+
+    .info-card > p,
+    .interest-card p {
+        font-size: 0.87rem;
+    }
+
+    .goals-card {
+        padding: 32px 22px;
+        border-radius: 18px;
+    }
+
+    .goals-card > p:not(.section-label) {
+        font-size: 0.87rem;
+    }
+
+    .footer {
+        padding-top: 42px;
+    }
+
+    .footer-logo {
+        font-size: 0.92rem;
+    }
+}
+
+
+/* =====================================================
+   13. SMALL MOBILE PHONES
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .logo {
+        font-size: 0.73rem;
+    }
+
+    .education-hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .education-hero .custom-btn {
+        width: 100%;
+    }
+
+    .section-heading h2,
+    .goals-card h2 {
+        font-size: 1.75rem;
+    }
+
+    .info-card,
+    .interest-card {
+        padding: 22px 18px;
+    }
+
+    .goals-card {
+        padding: 28px 18px;
+    }
+
+    .education-details {
+        font-size: 0.74rem;
+    }
+}
