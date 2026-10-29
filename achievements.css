@@ -468,3 +468,119 @@ button:focus-visible {
     outline: 2px solid var(--primary-color);
     outline-offset: 4px;
 }
+
+
+
+
+/* =====================================================
+   17. DARK / LIGHT THEME
+===================================================== */
+
+body.light-theme {
+    --bg-color: #f8f7fc;
+    --bg-secondary: #efedf7;
+    --card-color: #ffffff;
+    --primary-color: #8b35d6;
+    --secondary-color: #7130a8;
+    --text-color: #242033;
+    --text-muted: #625d73;
+    --border-color: rgba(139, 53, 214, 0.2);
+    --gradient: linear-gradient(135deg, #8b35d6, #d9468f);
+}
+
+/* Navbar */
+body.light-theme .custom-navbar {
+    background: rgba(248, 247, 252, 0.96);
+}
+
+body.light-theme .logo,
+body.light-theme .footer-logo {
+    color: #242033 !important;
+}
+
+body.light-theme .custom-navbar .navbar-toggler-icon {
+    filter: none;
+}
+
+/* Hero section */
+body.light-theme .hero-section {
+    background:
+        radial-gradient(
+            ellipse at 15% 45%,
+            rgba(139, 53, 214, 0.09),
+            transparent 48%
+        ),
+        var(--bg-color);
+}
+
+body.light-theme .profile-image {
+    border-color: var(--bg-color);
+}
+
+/* Buttons */
+body.light-theme .btn-outline-light.custom-btn {
+    color: var(--text-color);
+    border-color: rgba(113, 48, 168, 0.5);
+}
+
+body.light-theme .btn-outline-light.custom-btn:hover {
+    color: #ffffff;
+}
+
+/* Cards and sections */
+body.light-theme .education-section,
+body.light-theme .achievements-section,
+body.light-theme .business-section {
+    background: var(--bg-secondary);
+}
+
+body.light-theme .info-card,
+body.light-theme .project-card,
+body.light-theme .business-image-wrapper {
+    background: var(--card-color);
+}
+
+/* Footer */
+body.light-theme .footer {
+    background: #eae7f2;
+}
+
+body.light-theme .footer-socials a {
+    background: var(--card-color);
+}
+
+body.light-theme .footer-bottom {
+    border-top-color: rgba(36, 32, 51, 0.12);
+}
+
+body.light-theme .footer-bottom p {
+    color: var(--text-muted);
+}
+
+/* Theme toggle button */
+.theme-toggle-item {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background: var(--card-color);
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+    .theme-toggle-item {
+        margin: 8px 0 0;
+        justify-content: flex-start;
+    }
+}
